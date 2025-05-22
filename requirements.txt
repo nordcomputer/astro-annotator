@@ -1,0 +1,5 @@
+solve-field
+plot-constellations
+pngtopnm
+jpegtopnm
+file
