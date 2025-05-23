@@ -1,0 +1,8 @@
+astrometry.net
+netpbm
+file
+git
+curl
+unzip
+libgl1-mesa-glx
+python3.11-venv

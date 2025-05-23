@@ -1,0 +1,5 @@
+matplotlib
+pillow
+numpy
+astropy
+python-dotenv
