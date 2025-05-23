@@ -4,3 +4,6 @@
 *.fits
 *.env
 *.log
+!docs/example.jpg
+!docs/annotated_example.png
+!docs/labeled_example.png

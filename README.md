@@ -13,6 +13,10 @@
 - Automatic index file selection based on your camera and telescope settings
 
 ---
+![Original](docs/example.jpg)
+![Labeled Example](docs/annotated_example.png)
+![Annotated and labeled Example](docs/labeled_example.png)
+
 
 ## 📦 Requirements
 
