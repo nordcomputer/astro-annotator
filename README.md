@@ -48,7 +48,16 @@ If you change this file, you **must rebuild the Docker image** using the instruc
 
 To build the Docker image, run:
 
+
+### for Linux
 ```bash
+./build.sh
+```
+
+or
+
+### for Windows
+```cmd
 ./build.sh
 ```
 
@@ -65,9 +74,15 @@ This will:
 Place your **stretched images** (JPG or PNG) in the `_originals/` folder.
 
 Then run:
-
+### for Linux
 ```bash
 ./run.sh
+```
+or
+
+### for Windows
+```cmd
+./run.bat
 ```
 
 This will:
@@ -120,7 +135,9 @@ If left empty, values will be chosen automatically.
 ├── docker/
 │   └── Dockerfile
 ├── build.sh
+├── build.bat
 ├── run.sh
+├── run.bat
 └── README.md
 ```
 
