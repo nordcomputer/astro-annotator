@@ -13,9 +13,12 @@
 - Automatic index file selection based on your camera and telescope settings
 
 ---
-![Original](docs/example.jpg)
-![Labeled Example](docs/annotated_example.png)
-![Annotated and labeled Example](docs/labeled_example.png)
+<p align="center">
+  <img src="docs/example.jpg" alt="Original" width="30%">
+  <img src="docs/annotated_example.png" alt="Annotated" width="30%">
+  <img src="docs/labeled_example.png" alt="Labeled" width="30%">
+</p>
+
 
 
 ## 📦 Requirements
