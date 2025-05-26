@@ -65,7 +65,7 @@ or
 
 ### for Windows
 ```cmd
-./build.sh
+build.bat
 ```
 
 This will:
@@ -89,7 +89,7 @@ or
 
 ### for Windows
 ```cmd
-./run.bat
+run.bat
 ```
 
 This will:
