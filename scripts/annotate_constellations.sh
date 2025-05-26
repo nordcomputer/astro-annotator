@@ -79,4 +79,5 @@ process_image() {
 
 for f in "${FILES[@]}"; do
   process_image "$f"
+  chmod 775 "$f"
 done

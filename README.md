@@ -114,9 +114,13 @@ config/grid_config.env
 Examples:
 
 ```env
-GRID_SPACING_DEG=1.0
-GRID_COLOR=gray
-LABEL_COLOR=white
+GRID_SPACING_DEG = 1.0
+GRID_COLOR = gray
+LABEL_COLOR = white
+BACKGROUND_COLOR = black
+LINE_TYPE=solid
+GRID_LABEL_FONT_SIZE = 10
+GRID_TICK_FONT_SIZE = 8
 ```
 
 If left empty, values will be chosen automatically.

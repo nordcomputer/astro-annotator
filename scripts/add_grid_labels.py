@@ -13,6 +13,10 @@ grid_config = dotenv_values("config/grid_config.env")
 manual_spacing = grid_config.get("GRID_SPACING_DEG")
 grid_color = grid_config.get("GRID_COLOR", "white") or "white"
 label_color = grid_config.get("LABEL_COLOR", "white") or "white"
+line_type = grid_config.get("LINE_TYPE", "dotted") or "dotted"
+grid_label_fsize = grid_config.get("GRID_LABEL_FONT_SIZE", 10) or 10
+grid_tick_fsize = grid_config.get("GRID_TICK_FONT_SIZE", 8) or 8
+background_color = grid_config.get("BACKGROUND_COLOR", "black") or "black"
 
 # 📥 Validate arguments
 if len(sys.argv) != 4:
@@ -55,27 +59,31 @@ else:
     step_dec = best_grid_step(fov_dec)
 
 # 🖼️ Plot image and overlay grid
-fig = plt.figure(figsize=(10, 10))
+nx, ny = img_data.shape[1], img_data.shape[0]
+dpi = 300
+figsize = (nx / dpi, ny / dpi)
+
+fig = plt.figure(figsize=figsize, dpi=dpi)
+
+
 ax = plt.subplot(projection=wcs)
 ax.imshow(img_data, origin='lower')
 
 # 🧭 Axis labels and tick labels
-ax.coords[0].set_axislabel('RA', fontsize=10, color=label_color)
-ax.coords[1].set_axislabel('DEC', fontsize=10, color=label_color)
-ax.coords[0].set_ticklabel(color=label_color, size=8)
-ax.coords[1].set_ticklabel(color=label_color, size=8)
+ax.coords[0].set_axislabel('RA', fontsize=grid_label_fsize, color=label_color)
+ax.coords[1].set_axislabel('DEC', fontsize=grid_label_fsize, color=label_color)
+ax.coords[0].set_ticklabel(color=label_color, size=grid_tick_fsize)
+ax.coords[1].set_ticklabel(color=label_color, size=grid_tick_fsize)
 
-ax.coords[0].set_ticklabel_position('t')  # top
-ax.coords[1].set_ticklabel_position('r')  # right
 
 # 🌐 Apply grid
 ax.coords[0].set_ticks(spacing=step_ra * u.deg)
 ax.coords[1].set_ticks(spacing=step_dec * u.deg)
-ax.grid(color=grid_color, ls='dotted', lw=0.5)
+ax.grid(color=grid_color, ls=line_type, lw=0.5)
 
 # 🖤 Black background, no excessive borders
 fig.patch.set_facecolor("black")
-plt.savefig(output_img, dpi=150, facecolor='black', bbox_inches='tight', pad_inches=0.1)
+plt.savefig(output_img, dpi=dpi, facecolor=background_color, pad_inches=0.5)
 plt.close(fig)
 
 print(f"✅ Grid with labels saved: {output_img}")
